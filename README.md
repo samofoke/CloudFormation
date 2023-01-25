@@ -15,4 +15,28 @@
     ~~~
     aws cloudformation describe-stacks --stack-name [Name of the stack]
     ~~~
+- We also need this commands before we run our aws cli
+    ~~~
+    aws configure
+    aws iam list-users to list users we have.
+    {
+    "Users": [
+        {
+            "Path": "/",
+            "UserName": "Dev",
+            "UserId": "User ID key",
+            "Arn": "arn:aws:iam::[numbers]:user/Dev",
+            "CreateDate": "The date it was created"
+        }
+      ]
+    }
+    ~~~
+- When you add a DependsOn attribute to a resource, that resource is created only after the creation of the resource specified in the DependsOn attribute.
+    ~~~
+    "DependsOn" : [ String, ... ]
+    ~~~
+- We also have the !GetAtt function it returns the value of an attribute from a resource in the template.
+    ~~~
+    !GetAtt logicalNameOfResource.attributeName
+    ~~~
 - 

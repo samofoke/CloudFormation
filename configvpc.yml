@@ -122,5 +122,5 @@ Resources:
     Properties:
       AllocationId: !GetAtt NatGateway2EIP.AllocationId
       SubnetId: !Ref PublicSubnet02
-  
+
   
