@@ -39,4 +39,9 @@
     ~~~
     !GetAtt logicalNameOfResource.attributeName
     ~~~
-- 
+- Route Tables it is an action of applying (routing) rules to your network, rules define (in a particular order of precedence) the network protocol, allowed IP addresses, and ports to allow the inbound and outbound traffic separately.
+    ~~~
+    This will be defined as AWS::EC2::RouteTable on our CloudFormation Script.
+    Rules will be AWS::EC2::Route 
+    ~~~
+    
