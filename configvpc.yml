@@ -131,8 +131,9 @@ Resources:
       VpcId: !Ref VPC
       Tags:
         - Key: Name
-          Value: !sub ${EnvironmentName} Public Routes
-  
+          Value: !Sub ${EnvironmentName} Public Routes
+
+  #Our first routing rule.
   DefaultPublicRoute:
     Type: AWS::EC2::Route
     DependsOn: InternetGatewayAttachement
@@ -168,11 +169,13 @@ Resources:
       DestinationCidrBlock: 0.0.0.0/0
       NatGatewayId: !Ref NatGateway01
   
-  PublicSubnet2RouteTableAssociation:
+  PrivateSubnet1RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       RouteTableId: !Ref PrivateRouteTable01
       SubnetId: !Ref PrivateSubnet01
+
+#This private route table is for feature expansion.
 
   PrivateRouteTable02:
     Type: AWS::EC2::RouteTable
@@ -180,7 +183,23 @@ Resources:
       VpcId: !Ref VPC
       Tags: 
         - Key: Name
-          Value: !Sub ${EnvironmentName} Private Routes (AZ1)
+          Value: !Sub ${EnvironmentName} Private Routes (AZ2)
+  
+  DefaultPrivateRoute02:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !Ref PrivateRouteTable02
+      DestinationCidrBlock: 0.0.0.0/0
+      NatGatewayId: !Ref NatGateway02
+  
+  PrivateSubnet2RouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PrivateRouteTable02
+      SubnetId: !Ref PrivateSubnet02
+
+  
+
 
   
 
