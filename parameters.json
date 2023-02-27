@@ -1,7 +1,7 @@
 [
     {
         "ParameterKey": "EnvironmentName",
-        "ParameterValue": "MySampleProject" 
+        "ParameterValue": "MySampleProject-Sabata" 
     },
     {
         "ParameterKey": "VpcCIDR",
