@@ -44,3 +44,26 @@ Resources:
           FromPort: 0
           ToPort: 65535
           CidrIp: 0.0.0.0/0
+  
+  WebAppLaunchConfig:
+    Type:
+    Properties:
+      UserData:
+        fn::Base64: !Sub |
+          #!/bin/bash
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
